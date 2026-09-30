@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border: none;
+    text-transform: capitalize;
+}
+
+$crimson : crimson;
+$black:#0d0d0d;
+$light-bg:#1a1a1a;
+$white:#fff;
+$light-color:#aaa;
+$box-shadow:0 .5rem 1rem rgba(0,0,0,.7);
+
+html{
+    font-size: 62.5%;
+    overflow-x:hidden ;
+
+    &::-webkit-scrollbar{
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track{
+        background: $black;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background: $crimson;
+        border-radius: 5rem;
+    }
+}
+
+body{
+    background:$black;
+    padding-bottom: 6.5 rem;
+    
+}
+
+section{
+  padding: 5 rem 9%;  
+}
+
+.heading{
+    text-align: center;
+    font-size: 6vw;
+    color: $white;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    span{
+        text-transform: uppercase;
+        color: $crimson;
+    }
+}
+
+.btn{
+    align-items: center;
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: $crimson;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: $white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2rem;
+    i{
+        height:4rem;
+        width: 4rem;
+        line-height: 4rem;
+        font-size: 1.7rem;
+        text-align: center;
+        background: $white;
+        color: $crimson;
+        border-radius: 50%;
+        margin-left: 1rem;
+        transition: .2s linear;
+    }
+
+    &:hover i{
+        margin-left: 2rem;
+    }
+
+}
+
+.navbar{
+ position: fixed;
+ bottom:0; left:0; right:0;
+ display: flex;
+ z-index: 1000;
+ align-items: flex-end;
+
+  a{
+     padding:2rem;
+     font-size: 2rem;
+     background: $light-bg;
+     flex: 1;
+     color: $white;
+     text-align: center;
+     transition: 2sec linear;
+  
+        i{
+            color:$crimson;
+            padding-right: .5rem;
+        }
+            
+        &:hover{
+            background: $crimson;
+            padding-bottom: 6rem;
+            i{
+                color: $white;
+
+            }
+        }
+    } 
+}
+
+.home{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    //gap:4rem;
+    min-height: calc(100vh - 6.5rem);
+    
+    .image{
+        flex: 1 1 42rem;
+        text-align: center;
+        padding-left: 5%;
+        padding-bottom: 0;
+        margin-bottom: -50px;
+        img{
+            height: 50rem;
+            width:50rem;
+            border-radius: 50%;
+            padding-bottom: 0%;
+          //  border-radius:30% 70% 70% 30% / 30% 30% 70% 70%  ;
+        }   
+    }
+    .content{
+        flex:1 1 30rem;
+        
+        h3{
+            color: $white;
+            font-size: 4rem;
+            padding-bottom: .5rem;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            //border-right: .10em solid $crimson; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em; /* Adjust as needed */
+            animation: 
+                typing 3s steps(40, end),
+                blink-caret .75s step-end infinite;
+            
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+          }
+          
+          /* The typewriter cursor effect */
+          @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: $crimson; }
+          }
+
+        span{
+            font-size: 3rem;
+            color: crimson;
+         //   padding: .5rem 0;
+            display: block;
+        }
+       
+        p{
+            font-size: 1.5rem;
+            color: $light-color;
+          //  padding: 1rem 0;
+            line-height: 2;
+        }
+    }
+}
+.about{
+    .row{
+        display: flex;
+        align-items:center;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        .info-container{
+            flex:1;
+            padding-left: 20%;
+            padding-right: 20%;
+            h1{
+            color:$white;
+            text-transform: uppercase;
+            padding-bottom: 1.5rem;
+            font-size: 3rem;
+            }
+        }
+
+        .box-container{
+            padding:1rem 0;
+             display:flex;
+            flex-wrap: wrap;
+            gap:2rem;
+            .box{
+                flex:1;
+                h3{
+                    font-size: 1.5rem;
+                    color:$white;
+                    padding: 1rem 0;
+                    font-weight: normal;
+
+                    span{
+                        color: $light-color;
+                        font-weight:lighter;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.about-me{
+    display: flex;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-left: 20%;
+    padding-right: 10%;
+    
+    h1{
+    color:$white;
+    text-transform: uppercase;
+    font-size: 3rem;
+    padding-top: 5rem;
+    }
+    
+    p{
+    text-transform: none;
+    color:$white;
+    font-size: 2rem;  
+    }
+}
+
+.skill{
+    .box-container{
+        padding-top: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+
+        .box{
+            padding: 2rem;
+            text-align: center;
+            box-shadow: $box-shadow;
+            border-radius: .5rem;
+            background: $light-bg;
+            
+            img{
+                height: 7rem;
+                margin-bottom: 1rem;
+            }
+
+            h3{
+                color: $white;
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+}
+
+.contact{
+    margin-bottom: 10%;
+    h2{  
+        padding-top: 1%;
+        color: $white;
+        text-align: center;
+        font-size: 3rem;
+        
+    }
+    .app-link{
+        padding-top: 1%;
+        text-align: center;
+        a{
+          font-size: 2rem;
+          height: 4.5rem;
+          width: 4.5rem;
+          line-height: 4.5rem;
+          border-radius: 50%;
+          background: $light-bg;
+          color: $white;
+          margin-right: .3rem;  
+              &:hover{
+                background: $crimson;
+            }
+        }
+    }
+    .row{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;  
+    } 
+
+    .input{
+        border-radius: 5rem; 
+        height: 40px;
+        margin: 10px 10px 10px 10px; 
+        padding: 8px;
+    }
+}        
+.portfolio{
+    text-align: center;
+    margin-bottom: 10%;
+   .box-container{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px ;
+    
+   
+
+
+    .box{
+        height: 30rem;
+        overflow: hidden;
+        position: relative;
+        
+        &:hover {
+            .content{
+            transform: translateY(0);
+        }
+        }
+
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .content{
+            position: absolute;
+            top: 0; left: 0;
+            height: 100%;
+            width:100%;
+            background: $light-bg;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            transform: translateY(-100%);
+            transition: .2s linear;
+      
+            h3{
+                font-size: 2.5rem;
+                color: $white;
+                text-transform: uppercase;
+            }
+            p{
+                padding: 1rem 0;
+                font-size: 1.5rem;
+                line-height: 2;
+                color: $light-color;
+            }
+            a{
+                font-size: 2rem;
+                color: $crimson;
+
+                &:hover{
+                    color: $white;
+                }
+            }
+
+    }
+
+
+    }
+ 
+
+
+
+   }    
+}
+
+
+
+
+
+
+
+
+//media queries
+
+@media(max-width:1200px)
+{
+    html{
+        font-size: 55%;
+    }
+    section{
+        padding: 3rem 2rem;
+      }      
+}
+
+@media(max-width:768px)
+{
+   .heading{
+       font-size: 12vw ;
+   }
+   .navbar{
+        a{
+            i{
+                padding: 0;
+            }
+            span{
+                display: none;
+            }
+            &:hover{
+                padding-bottom: 2rem;
+            }
+        }
+    }
+   .home{
+       text-align: center;
+       gap: 2 rem;
+       .image{
+         padding-left: 0;
+         margin-bottom: -150px;
+         
+            img{
+                height: 30rem;
+                width: 30rem;
+            }
+        }
+       .content{
+           h3{
+               font-size: 3rem;
+           }
+           span{
+               font-size: 2.5rem;
+           }
+       }
+   }
+   
+   .skill{
+    text-align: center;
+       .box-container{          
+          grid-template-columns: none;
+
+        }
+    }
+   .portfolio{
+    text-align: center;
+       .box-container{          
+          grid-template-columns: none;
+
+        }
+    }
+    
+}
+
+@media(max-width:450px)
+{
+    html{
+        font-size: 50%;
+    }
+   
+    
+   
+}
